@@ -1,0 +1,1 @@
+const CACHE='little-ledger-v1';const ASSETS=['./','./index.html','./style.css','./app.js','./manifest.webmanifest','./assets/cat-launcher-192.png'];self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS))));self.addEventListener('fetch',e=>e.respondWith(caches.match(e.request).then(c=>c||fetch(e.request))));
